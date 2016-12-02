@@ -22,13 +22,8 @@ import requests
 from sys import argv
 from wit import Wit
 from bottle import Bottle, request, debug
+from tvshowlisting import tvlisting
 
-# Wit.ai parameters
-WIT_TOKEN = os.environ.get('WIT_TOKEN')
-# Messenger API parameters
-FB_PAGE_TOKEN = os.environ.get('FB_PAGE_TOKEN')
-# A user secret to verify webhook get request.
-FB_VERIFY_TOKEN = os.environ.get('FB_VERIFY_TOKEN')
 
 # Setup Bottle Server
 debug(True)
@@ -118,25 +113,29 @@ def send(request, response):
     fb_message(fb_id, text)
 
 
-def get_forecast(request):
+def gettvshows(request):
     context = request['context']
     entities = request['entities']
-    loc = first_entity_value(entities, 'location')
-    if loc:
+    channel = first_entity_value(entities, 'channel')
+    if channel:
         # This is where we could use a weather service api to get the weather.
-        context['forecast'] = 'sunny'
-        if context.get('missingLocation') is not None:
-            del context['missingLocation']
+
+
+
+
+        context['tvshow'] = tvlisting(channel)
+        if context.get('missingChannel') is not None:
+            del context['missingChannel']
     else:
-        context['missingLocation'] = True
-        if context.get('forecast') is not None:
-            del context['forecast']
+        context['missingChannel'] = True
+        if context.get('tvshow') is not None:
+            del context['tvshow']
     return context
 
 # Setup Actions
 actions = {
     'send': send,
-    'getForecast': get_forecast,
+    'gettvshows': gettvshows,
 }
 
 # Setup Wit Client
