@@ -144,4 +144,4 @@ client = Wit(access_token=WIT_TOKEN, actions=actions)
 
 if __name__ == '__main__':
     # Run Server
-    app.run(host='0.0.0.0', port=80)
+    app.run(server="gunicorn",host='0.0.0.0', port=int(environ.get("PORT", 5000)
