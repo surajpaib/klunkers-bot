@@ -24,7 +24,7 @@ from wit import Wit
 from bottle import Bottle, request, debug
 from tvshowlisting import tvlisting
 
-WIT_TOKEN=F6V6GKFJVYVXMLPC36HP7L222HGZM2TF
+WIT_TOKEN="F6V6GKFJVYVXMLPC36HP7L222HGZM2TF"
 
 # Setup Bottle Server
 debug(True)
