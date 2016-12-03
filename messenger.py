@@ -24,8 +24,9 @@ from wit import Wit
 from bottle import Bottle, request, debug
 from tvshowlisting import tvlisting
 
-WIT_TOKEN="F6V6GKFJVYVXMLPC36HP7L222HGZM2TF"
-
+WIT_TOKEN="LR4NZZVIANUWWOE6AX3IUDCDNBEL234F"
+FB_VERIFY_TOKEN="goklunkers"
+FB_PAGE_TOKEN="EAATQSAo4L7sBAGON9jVp19ZCBsURJ9ErTBRjfN385UgtOCEwFGHgkR8wIVAXDTUGWvexZBn6fvzFyvr2AS1gkFNOZC4afnw2gonhfnZAAr4PnbhaLagBCVbx9C2N1spiMotQ3d4665eog6ZAFuMtVc7Uzd23yiZBE1goCujZAjl0wZDZD"
 # Setup Bottle Server
 debug(True)
 app = Bottle()
