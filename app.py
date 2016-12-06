@@ -7,7 +7,7 @@ import os
 app=Flask(__name__)
 
 
-@app.route('/webhook',methods=[POST,GET])
+@app.route("/webhook",methods=POST)
 def webhook():
     if (request.method==POST):
         data=request.json
@@ -23,7 +23,7 @@ def webhook():
         return response
 
 
-@app.route('/')
+@app.route("/")
 def index():
     return "Server is now Online"
 
