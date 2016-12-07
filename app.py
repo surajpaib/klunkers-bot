@@ -15,9 +15,15 @@ def webhook():
         action=result["action"]
         channel=result["parameters"]["channel"]
         show=tvlisting(channel)
-        obj={}
-        obj["speech"]="The TV show playing right now is"+show
-        obj["data"]={"facebook": {"TV show playing now is "+ show}}
+        obj={
+            'speech':"The TV show playing right now is"+show
+            'displayText':"The show playing now is"+show
+            'data':{'facebook':{'TV show playing now is'+show}}
+            'contextOut': None
+            'source': None
+
+        }
+
 
         response=json.dumps(obj)
         return response
