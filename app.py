@@ -26,7 +26,7 @@ def webhook():
 
 
         response=json.dumps(obj)
-        return response
+        return obj
     if (request.method=='GET'):
         return "Page is online"
 
