@@ -18,7 +18,7 @@ def webhook():
         channel=result["parameters"]["channel"]
         show=tvlisting(channel)
         facebookmsg={
-            'type':'text'
+            'type':'text',
             'body':'The TV Show playing right now is '+str(show)
         }
         obj={
