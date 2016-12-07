@@ -1,6 +1,7 @@
 import requests
-import json
-from flask import Flask, request
+
+
+from flask import Flask, request,Response,jsonify
 from tvshowlisting import tvlisting
 import os
 
@@ -23,11 +24,13 @@ def webhook():
             'source': None
 
         }
+        
+        resp=jsonify(obj)
+        resp.status_code=200
 
 
-        response=json.dumps(obj)
-        resp=flask.Response(response)
-        resp.headers['Content-Type']='application/json'
+
+
 
         return resp
     if (request.method=='GET'):
