@@ -24,9 +24,8 @@ def webhook():
             'source': None
 
         }
-        
-        resp=jsonify(obj)
-        resp.status_code=200
+        js=json.dumps(obj)
+        resp = Response(js, status=200, mimetype='application/json')
 
 
 
