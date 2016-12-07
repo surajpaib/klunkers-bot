@@ -26,7 +26,10 @@ def webhook():
 
 
         response=json.dumps(obj)
-        return obj
+        resp=flask.Response(response)
+        resp.headers['Content-Type']='application/json'
+
+        return resp
     if (request.method=='GET'):
         return "Page is online"
 
