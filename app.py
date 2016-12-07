@@ -21,11 +21,12 @@ def webhook():
             'type':'text',
             'body':'The TV Show playing right now is '+str(show)
         }]
+        facebookmsg=json.dumps(facebookmsg)
         obj={
             'speech':"The TV show playing right now is "+show,
             'displayText':"The show that's playing right now is ",
             'data':{
-                'facebook':{facebookmsg}
+                'facebook':facebookmsg
                 },
             'contextOut': None,
             'source': None
