@@ -6,7 +6,7 @@ from tvshowlisting import tvlisting
 import os
 
 app=Flask(__name__)
-
+app.debug=True
 
 @app.route("/webhook",methods=['GET','POST'])
 def webhook():
