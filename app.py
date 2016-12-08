@@ -15,17 +15,21 @@ def webhook():
         data=request.get_json()
         result=data["result"]
         action=result["action"]
+        user=data["sessionId"]
         channel=result["parameters"]["channel"]
         ##show=tvlisting(channel)
         show="Just now"
 
         if (show!=None):
             facebookmsg={
+                "recipient":{
+                "id":user
+                },
                 "message":{
-                "text":"Now playing is "+str(show)
+                "text":"hello, world!"
                 }
                 }
-            facebookmsg=json.dumps(facebookmsg)
+            #facebookmsg=json.dumps(facebookmsg)
             obj={
                 'speech':"The TV show playing right now is "+show,
                 'displayText':"The show that's playing right now is ",
