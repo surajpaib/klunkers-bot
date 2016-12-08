@@ -41,6 +41,7 @@ def webhook():
 
         else:
             return "Channel listing unavailable"
+
     if (request.method=='GET'):
         return "Page is online"
 
