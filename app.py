@@ -20,10 +20,11 @@ def webhook():
         show="Just now"
 
         if (show!=None):
-            facebookmsg=[{
-                'type':'text',
-                'body':'The TV Show playing right now is '+str(show)
-                }]
+            facebookmsg={
+                "message":{
+                "text":"Now playing is "+str(show)
+                }
+                }
             facebookmsg=json.dumps(facebookmsg)
             obj={
                 'speech':"The TV show playing right now is "+show,
