@@ -1,10 +1,15 @@
 import requests
 import datetime
 import json
+from pytz import timezone
+
+
+
 
 
 def tvlisting(channel):
-    t=datetime.datetime.now()
+    t=datetime.datetime.now(timezone('UTC'))
+    t=t.astimezone(timezone('Asia/Calcutta'))
     channel=channel.lower()
     channel=channel.replace(" ","-")
     print channel
