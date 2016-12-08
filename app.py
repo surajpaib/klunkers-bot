@@ -21,20 +21,13 @@ def webhook():
         show="Just now"
 
         if (show!=None):
-            facebookmsg={
-                "message":{
-                "text":"hello, world!"
-                }
-                }
             #facebookmsg=json.dumps(facebookmsg)
             obj={
                 'speech':"The TV show playing right now is "+show,
                 'displayText':"The show that's playing right now is ",
-                'data':{
-                    'facebook':facebookmsg
-                        },
-                        'contextOut': None,
-                        'source': None
+                'data':None,
+                'contextOut': None,
+                'source': None
 
                         }
             js=json.dumps(obj)
