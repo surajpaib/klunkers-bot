@@ -16,8 +16,8 @@ def webhook():
         result=data["result"]
         action=result["action"]
         channel=result["parameters"]["channel"]
-        show=tvlisting(channel)
-
+        ##show=tvlisting(channel)
+        show="Just now"
 
         if (show!=None):
             facebookmsg=[{
