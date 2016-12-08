@@ -35,7 +35,18 @@ def webhook():
             return resp
 
         else:
-            return "Channel listing unavailable"
+            obj={
+                'speech':"Sorry, I cannot find what you are looking for, try another channel?",
+                'displayText':"Try another channel please",
+                'data':None,
+                'contextOut': None,
+                'source': None
+
+                        }
+            js=json.dumps(obj)
+            resp = Response(js, status=200, mimetype='application/json')
+            return resp
+
 
     if (request.method=='GET'):
         return "Page is online"
