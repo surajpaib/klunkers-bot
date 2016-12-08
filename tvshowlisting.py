@@ -24,6 +24,7 @@ def tvlisting(channel):
 
     for show in shows:
         if (show["showTime"]==time):
+            print show["showTitle"]
             return show["showTitle"]
 
 
