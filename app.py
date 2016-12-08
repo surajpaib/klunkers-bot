@@ -31,7 +31,7 @@ def webhook():
                 'speech':"The TV show playing right now is "+show,
                 'displayText':"The show that's playing right now is ",
                 'data':{
-                    'facebook':facebookmsg
+                    'facebook':{facebookmsg}
                         },
                         'contextOut': None,
                         'source': None
