@@ -37,12 +37,10 @@ def webhook():
                         }
             js=json.dumps(obj)
             resp = Response(js, status=200, mimetype='application/json')
-
-
-
-
-
             return resp
+
+        else:
+            return "Channel listing unavailable"
     if (request.method=='GET'):
         return "Page is online"
 
