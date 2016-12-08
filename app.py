@@ -6,9 +6,13 @@ from tvshowlisting import tvlisting
 import os
 import json
 
+
+# Initialize Flask App
 app=Flask(__name__)
 app.debug=True
 
+
+# Webhook
 @app.route("/webhook",methods=['GET','POST'])
 def webhook():
     if (request.method=='POST'):
