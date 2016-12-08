@@ -47,11 +47,10 @@ def tvlisting(channel):
 
 
 def roundofftime(t):
+    hour=t.hour
     if (hour<10):
-        hour=t.hour
         hour="0"+hour
-    else:
-        hour=t.hour
+
 
     minute=t.minute
     second="00"
