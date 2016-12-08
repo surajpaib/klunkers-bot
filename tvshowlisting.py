@@ -5,7 +5,13 @@ from pytz import timezone
 
 
 
+'''
+tvlisting function that gets current date and time and converts it to Indian Time Zone for Indian TV Guide Listing.
+Specifically customized for TV Shows and modified to find nearest match.
 
+
+
+'''
 
 def tvlisting(channel):
     t=datetime.datetime.now(timezone('UTC'))
@@ -41,7 +47,12 @@ def tvlisting(channel):
 
 
 def roundofftime(t):
-    hour=t.hour
+    if (hour<10):
+        hour=t.hour
+        hour="0"+hour
+    else:
+        hour=t.hour
+
     minute=t.minute
     second="00"
 
