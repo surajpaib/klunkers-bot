@@ -22,9 +22,6 @@ def webhook():
 
         if (show!=None):
             facebookmsg={
-                "recipient":{
-                "id":user
-                },
                 "message":{
                 "text":"hello, world!"
                 }
