@@ -17,29 +17,32 @@ def webhook():
         action=result["action"]
         channel=result["parameters"]["channel"]
         show=tvlisting(channel)
-        facebookmsg=[{
-            'type':'text',
-            'body':'The TV Show playing right now is '+str(show)
-        }]
-        facebookmsg=json.dumps(facebookmsg)
-        obj={
-            'speech':"The TV show playing right now is "+show,
-            'displayText':"The show that's playing right now is ",
-            'data':{
-                'facebook':facebookmsg
-                },
-            'contextOut': None,
-            'source': None
-
-        }
-        js=json.dumps(obj)
-        resp = Response(js, status=200, mimetype='application/json')
 
 
+        if (show!=None):
+            facebookmsg=[{
+                'type':'text',
+                'body':'The TV Show playing right now is '+str(show)
+                }]
+            facebookmsg=json.dumps(facebookmsg)
+            obj={
+                'speech':"The TV show playing right now is "+show,
+                'displayText':"The show that's playing right now is ",
+                'data':{
+                    'facebook':facebookmsg
+                        },
+                        'contextOut': None,
+                        'source': None
+
+                        }
+            js=json.dumps(obj)
+            resp = Response(js, status=200, mimetype='application/json')
 
 
 
-        return resp
+
+
+            return resp
     if (request.method=='GET'):
         return "Page is online"
 
